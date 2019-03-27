@@ -112,9 +112,10 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         super.onNewIntent(intent);
         setIntent(intent);
 
-        if (!doShortcutActions() || _db.isLocked()) {
+        /*if (!doShortcutActions() || _db.isLocked()) {
             unlockDatabase(null);
-        }
+        }*/
+        doShortcutActions();
     }
 
     @Override
@@ -312,7 +313,6 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
     }
 
     public void startActivityForResult(Intent intent, int requestCode) {
-        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         super.startActivityForResult(intent, requestCode);
     }
 
